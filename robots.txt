@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://swap-weth.github.io/sitemap.xml
