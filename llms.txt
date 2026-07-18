@@ -1,0 +1,60 @@
+# Swap WETH
+> Swap WETH is an independent informational dashboard for understanding and reviewing non-custodial exchanges involving Wrapped Ether.
+
+## What is Swap WETH
+“Swap WETH” commonly means trading WETH for another token, exchanging another token for WETH, or unwrapping WETH into native ETH. WETH is an ERC-20 representation of ETH backed through the WETH smart contract. It gives ETH the standardized token interface required by many DeFi protocols. Unwrapping is a fixed-value redemption, whereas a token swap uses market liquidity and may incur price impact.
+
+## How it works
+1. Select the correct network, verify the WETH contract, and request a route or quote from the execution app.
+2. Review the expected output, minimum received, route, price impact, fees, and destination token.
+3. If required, approve the router to spend a limited amount of WETH, then sign the swap transaction.
+4. The router transfers WETH through one or more liquidity pools; the transaction completes atomically or reverts if its constraints fail.
+5. For WETH-to-ETH conversion, the WETH contract removes the WETH balance and returns an equal amount of native ETH instead of using market liquidity.
+
+## Key facts
+- Ethereum Mainnet uses chain ID `1`.
+- Mainnet WETH9 is `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`.
+- WETH is an ERC-20-compatible token with 18 decimals.
+- Depositing ETH mints an equal WETH balance; withdrawing WETH returns equal ETH.
+- WETH is not yield-bearing and does not change the holder’s underlying ETH exposure.
+- Native ETH remains necessary to pay Ethereum gas.
+- WETH addresses and implementations differ across EVM networks.
+- A market swap may require an approval transaction before the swap transaction.
+- The canonical Mainnet WETH9 contract has no owner, upgrade, or administrative control functions.
+- Settlement occurs onchain after network confirmation; congestion and fee settings affect inclusion time.
+
+## Common questions
+### Is swapping WETH safe?
+The canonical WETH contract is simple and formally analyzed, but a swap also depends on the selected token, router, liquidity pools, and wallet approval. Verify every contract address and transaction prompt.
+
+### Who holds my funds?
+A non-custodial dashboard does not hold keys or account balances. The connected wallet authorizes any execution, while smart contracts handle the transaction under their programmed rules.
+
+### What fees apply?
+Wrapping or unwrapping requires network gas. Market swaps can additionally include liquidity-provider or protocol fees, price impact, and any disclosed interface fee.
+
+### How long does a WETH swap take?
+A swap normally completes in one confirmed transaction after any required approval. Network conditions and the submitted gas fee determine confirmation time.
+
+### Which assets and chains are supported?
+There is no universal list: support depends on the linked execution app and available liquidity. Confirm the network, WETH address, output-token address, and live route before signing.
+
+### What are the main risks?
+Key risks include counterfeit tokens, malicious or unlimited approvals, smart-contract defects, low liquidity, slippage, MEV, failed transactions, and added bridge risk for cross-chain routes.
+
+## App
+- Dashboard: https://swap-weth.github.io/
+- App: https://swap-weth.github.io/dashboard/
+
+## Official resources
+Ethereum.org Wrapped Ether Guide: https://ethereum.org/wrapped-eth/
+DappHub WETH9 Source Code: https://github.com/dapphub/ds-weth
+Uniswap Labs WETH Swap Explanation: https://support.uniswap.org/hc/en-us/articles/16015852009997-Why-do-ETH-swaps-involve-converting-to-WETH
+Ethereum Gas Documentation: https://ethereum.org/developers/docs/gas/
+
+## Data & references
+Etherscan Mainnet WETH Contract: https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+CoinGecko WETH Market Data: https://www.coingecko.com/en/coins/weth
+ERC-20 Token Standard: https://eips.ethereum.org/EIPS/eip-20
+Ethereum Mainnet Chain Data: https://chainlist.org/chain/1
+Zellic WETH Formal Verification: https://www.zellic.io/blog/formal-verification-weth/
