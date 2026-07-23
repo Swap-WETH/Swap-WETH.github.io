@@ -1,0 +1,19 @@
+{
+  "name": "Swap WETH",
+  "short_name": "Swap WETH",
+  "description": "Unwrap Wrapped Ether to ETH 1:1 or trade WETH on a DEX. Check the contract, approvals, gas, fees, price impact, safety and fixes.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
