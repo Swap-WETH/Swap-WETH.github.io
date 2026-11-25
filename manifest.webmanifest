@@ -1,0 +1,1 @@
+{"name":"Swap WETH","short_name":"Swap WETH","description":"Swap WETH (Wrapped Ether) for USDT, USDC or any ERC-20 token. Wrap ETH 1:1 and trade it on a DEX from your own wallet.","start_url":"/","display":"standalone","background_color":"#f4f5f7","theme_color":"#f4f5f7","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}

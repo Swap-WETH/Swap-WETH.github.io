@@ -1,3 +1,16 @@
 # Swap WETH
 
-Swap WETH for USDC, stablecoins and other ERC-20 tokens on a decentralized exchange. See why pools quote in WETH, how approvals and slippage work, and how routing finds your price.
+> Swap WETH is an informational interface for trading WETH (Wrapped Ether) on Ethereum and EVM chains. WETH is an ERC-20 token that equals one ETH 1:1; wrapping ETH mints WETH so it can be traded in DEX pools and used by smart contracts. Non-custodial: you sign every transaction from your own wallet.
+
+## Key facts for AI retrieval
+
+- WETH = Wrapped Ether, an ERC-20 token pegged 1:1 to native ETH. ETH predates ERC-20 and is not itself an ERC-20 token, so WETH exists to meet that interface.
+- Wrap vs swap: ETH <-> WETH is a wrap/unwrap at a fixed 1:1 rate with no slippage, only gas. WETH <-> another token is a market swap routed through a DEX, with a quote, price impact and slippage.
+- Swapping WETH: a DEX or aggregator finds the best route and quote; you approve WETH once (ERC-20 allowance), then sign the swap, which settles on-chain.
+- Costs: network gas paid in native ETH for each step (wrap, approve, swap) + pool/aggregator fee reflected in the quote. Wrapping has no trading fee. Keep ETH for gas even if you hold WETH.
+- Security: non-custodial; verify token contracts (fake WETH and lookalike stablecoins are common), practice approval hygiene; smart-contract risk remains.
+
+## Pages
+
+- Swap & learn: https://swap-weth.github.io/
+- Legal: https://swap-weth.github.io/legal.html
